@@ -1,15 +1,46 @@
 {
   # Import all your configuration modules here
-  imports = [ ./bufferline.nix ];
+  imports = [ 
+    ./bufferline.nix
+    ./options.nix
+  ];
 
-  plugins.lightline.enable = true;
+  globals.mapleader = " ";
 
-  colorschemes.gruvbox.enable = true;
-
-  opts = {
-    number = true;
-    relativeNumber = true;
-
-    shiftWidth = 2;
+  plugins.neo-tree = {
+    enable = true;
   };
+
+  plugins.treesitter = {
+    enable = true;
+  };
+
+  plugins.lightline = {
+    enable = true;
+  };
+
+  colorschemes.dracula.enable = true;
+  
+  plugins.telescope = {
+    enable = true;
+    keymaps = {
+      "<leader>ff" = {
+        action = "git_files";
+	desc = "[F]ind [F]ile";
+      };
+    };
+  };
+
+  plugins.which-key = {
+    enable = true;
+  };
+
+  plugins.lsp = {
+    enable = true;
+  };
+
+  plugins.cmp = {
+    enable = true;
+  };
+
 }
