@@ -1,4 +1,6 @@
 {
+  viAlias = true;
+  vimAlias = true;
 
   editorconfig.enable = true;
   opts = {

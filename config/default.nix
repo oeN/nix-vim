@@ -3,9 +3,13 @@
   imports = [ 
     ./bufferline.nix
     ./options.nix
+    ./cmp.nix
   ];
 
   globals.mapleader = " ";
+  colorschemes.dracula.enable = true;
+
+  # TODO: move each plugin in its own file
 
   plugins.neo-tree = {
     enable = true;
@@ -18,8 +22,6 @@
   plugins.lightline = {
     enable = true;
   };
-
-  colorschemes.dracula.enable = true;
   
   plugins.telescope = {
     enable = true;
@@ -37,10 +39,16 @@
 
   plugins.lsp = {
     enable = true;
+    servers = {
+      nixd.enable = true;
+      pyright.enable = true;
+    };
   };
 
-  plugins.cmp = {
-    enable = true;
-  };
 
+  plugins.surround.enable = true;
+
+  plugins.comment.enable = true;
+
+  plugins.fidget.enable = true;
 }
